@@ -45,8 +45,10 @@ const int num_responses_index = sizeof(responses_index) / sizeof(responses_index
 const int num_wrong_responses = sizeof(wrongresponses) / sizeof(wrongresponses[0]);
 
 void decode_responses_ziffer() {
-    for (int i = 0; i < num_responses_ziffer; i++) {
-        for (int j = 0; j < MAX_LENGTH; j++) {
+    int i;
+    int j;
+    for (i = 0; i < num_responses_ziffer; i++) {
+        for (j = 0; j < MAX_LENGTH; j++) {
             responses_ziffer[i][j] = responses_ziffer_hex[i * MAX_LENGTH + j];
             if (responses_ziffer[i][j] == 0x00) {
                 break;
