@@ -156,8 +156,6 @@ void SysTickIntHandler(void) {
 
   // Initialize the lwIP library, using DHCP.
   lwIPInit(sys_clk, mac, 0, 0, 0, IPADDR_USE_DHCP);
-  const char *cert_file = "C:\\Users\\felix\\cert.pem";
-  const char *key_file = "C:\\Users\\felix\\key.pem";
 
   // Configure Mongoose and initialize it here.
 
