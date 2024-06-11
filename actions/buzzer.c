@@ -59,8 +59,8 @@ void Buzzer_Stop(void) {
 void playAlleMeineEntchen() {
     int melody[] = {0, 1, 2, 3, 4, 3, 4, 5, 5, 5, 5, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0};
     int noteDurations[] = {500, 500, 500, 500, 500, 500, 500, 500, 500, 1000, 500, 500, 500, 500, 1000, 500, 500, 500, 500, 1000, 500, 500, 500, 500, 1000, 500, 500, 500, 500, 1000, 500, 500, 500, 500, 500, 500, 500, 500, 500, 1000, 500, 500, 500, 500, 1000, 500, 500, 500, 500, 1000, 500, 500, 500, 500, 1000, 500};
-
-    for (int i = 0; i < sizeof(melody) / sizeof(melody[0]); i++) {
+int i;
+    for (i = 0; i < sizeof(melody) / sizeof(melody[0]); i++) {
         buzzer_playTone(melody[i], noteDurations[i]);
         SysCtlDelay(SysCtlClockGet()*2); // Delay zwischen den Noten
     }
@@ -100,8 +100,8 @@ void buzzer_playTone(int note, int duration) {
 void playWindowsErrorSound() {
     int melody[] = {2, 0, 5}; // E, C, A
     int noteDurations[] = {1500, 1500, 3000}; // Durations in milliseconds
-
-    for (int i = 0; i < sizeof(melody) / sizeof(melody[0]); i++) {
+    int i;
+    for (i = 0; i < sizeof(melody) / sizeof(melody[0]); i++) {
         buzzer_playTone(melody[i], noteDurations[i]);
         SysCtlDelay(SysCtlClockGet() / 3 / 1000 * 50); // Short delay between notes
     }
